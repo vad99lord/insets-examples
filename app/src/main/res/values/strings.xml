@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">insets-examples</string>
     <string name="compose_samples">Compose samples</string>
+    <string name="insets_sample_list">Insets list sample</string>
 </resources>
