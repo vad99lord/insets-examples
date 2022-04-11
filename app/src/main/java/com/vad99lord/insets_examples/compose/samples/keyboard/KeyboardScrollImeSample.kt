@@ -6,19 +6,13 @@ import androidx.compose.foundation.layout.WindowInsetsSides
 import androidx.compose.foundation.layout.asPaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.ime
 import androidx.compose.foundation.layout.imePadding
-import androidx.compose.foundation.layout.navigationBars
 import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.only
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.statusBars
-import androidx.compose.foundation.layout.union
-import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.Icon
 import androidx.compose.material.ListItem
@@ -27,13 +21,10 @@ import androidx.compose.material.OutlinedTextField
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
-import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
@@ -42,11 +33,17 @@ import com.google.accompanist.insets.rememberImeNestedScrollConnection
 import com.google.accompanist.insets.ui.Scaffold
 import com.google.accompanist.insets.ui.TopAppBar
 import com.vad99lord.insets_examples.R
-import com.vad99lord.insets_examples.compose.util.generateRandomListItem
+import com.vad99lord.insets_examples.compose.components.BottomEditText
+import com.vad99lord.insets_examples.compose.components.SampleListItem
+import com.vad99lord.insets_examples.compose.data.ListItem
+import com.vad99lord.insets_examples.compose.utils.generateRandomListItems
+import com.vad99lord.insets_examples.compose.utils.randomListItem
 
 @OptIn(ExperimentalAnimatedInsets::class, ExperimentalMaterialApi::class)
 @Composable
-fun KeyboardScrollImeSample() {
+fun KeyboardScrollImeSample(
+    listItems: List<ListItem> = generateRandomListItems()
+) {
     Scaffold(
         topBar = {
             TopAppBar(
@@ -59,19 +56,7 @@ fun KeyboardScrollImeSample() {
             )
         },
         bottomBar = {
-            Surface(elevation = 1.dp) {
-                val text = remember { mutableStateOf(TextFieldValue()) }
-                OutlinedTextField(
-                    value = text.value,
-                    onValueChange = { text.value = it },
-                    placeholder = { Text(text = "Watch me animate...") },
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(horizontal = 16.dp, vertical = 8.dp)
-                        .navigationBarsPadding()
-                        .imePadding()
-                )
-            }
+            BottomEditText()
         },
         modifier = Modifier.fillMaxSize()
     ) { contentPadding ->
@@ -83,16 +68,8 @@ fun KeyboardScrollImeSample() {
                     .weight(1f)
                     .nestedScroll(connection = rememberImeNestedScrollConnection())
             ) {
-                items(listItems) { listItem ->
-                    ListItem(
-                        icon = { Icon(listItem.icon, null) },
-                        text = { Text(listItem.message) },
-                        modifier = Modifier.fillMaxWidth()
-                    )
-                }
+                items(listItems) { SampleListItem(it) }
             }
         }
     }
 }
-
-private val listItems = List(50) { generateRandomListItem() }

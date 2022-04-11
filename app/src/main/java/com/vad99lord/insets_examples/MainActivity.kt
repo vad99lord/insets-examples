@@ -3,7 +3,6 @@ package com.vad99lord.insets_examples
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.WindowCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.google.android.material.divider.MaterialDividerItemDecoration
@@ -25,12 +24,6 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        // Turn off the decor fitting system windows, because we handle insets ourselves
-        //WindowCompat.setDecorFitsSystemWindows(window, false)
-        /*if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            window.attributes.layoutInDisplayCutoutMode =
-                WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_ALWAYS
-        }*/
         initList()
     }
 

@@ -7,16 +7,11 @@ import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.WindowInsets
-import androidx.compose.foundation.layout.WindowInsetsSides
-import androidx.compose.foundation.layout.asPaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.only
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.statusBars
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
@@ -24,31 +19,31 @@ import androidx.compose.foundation.systemGestureExclusion
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.google.accompanist.insets.ui.TopAppBar
 import com.vad99lord.insets_examples.R
 import com.vad99lord.insets_examples.compose.components.BottomSheetIndicator
 import com.vad99lord.insets_examples.compose.components.BottomSheetInsetScaffold
 import com.vad99lord.insets_examples.compose.components.ColoredBox
-import com.vad99lord.insets_examples.compose.util.generateRandomColor
+import com.vad99lord.insets_examples.compose.components.SampleTopBar
+import com.vad99lord.insets_examples.compose.utils.generateList
+import com.vad99lord.insets_examples.compose.utils.randomColor
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
-fun GestureExclusionSample() {
+fun GestureExclusionSample(
+    colorsList: List<Color> = generateList(50) {
+        randomColor()
+    }
+) {
     BottomSheetInsetScaffold(
         topBar = {
-            TopAppBar(
-                title = { Text(stringResource(R.string.insets_sample_gesture_exclusion)) },
-                backgroundColor = MaterialTheme.colors.surface,
-                contentPadding = WindowInsets.statusBars
-                    .only(WindowInsetsSides.Horizontal + WindowInsetsSides.Top)
-                    .asPaddingValues()
+            SampleTopBar(
+                titleRes = R.string.insets_sample_gesture_exclusion
             )
         },
         sheetContent = { height ->
@@ -128,6 +123,12 @@ fun GestureExclusionSample() {
     }
 }
 
+@Preview
+@Composable
+fun GestureExclusionSamplePreview() {
+    GestureExclusionSample()
+}
+
 @Composable
 private fun MatchParentWidthColumn(
     content: @Composable ColumnScope.() -> Unit
@@ -136,12 +137,4 @@ private fun MatchParentWidthColumn(
         Modifier.width(IntrinsicSize.Max),
         content = content
     )
-}
-
-private val colorsList = List(50) { generateRandomColor() }
-
-@Preview
-@Composable
-fun GestureExclusionSamplePreview() {
-    GestureExclusionSample()
 }

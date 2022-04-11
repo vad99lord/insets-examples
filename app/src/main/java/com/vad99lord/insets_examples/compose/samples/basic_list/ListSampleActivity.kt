@@ -1,25 +1,14 @@
 package com.vad99lord.insets_examples.compose.samples.basic_list
 
-import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.SideEffect
-import androidx.compose.ui.graphics.Color
-import com.google.accompanist.systemuicontroller.rememberSystemUiController
-import com.vad99lord.insets_examples.compose.samples.BaseInsetSampleActivity
+import com.vad99lord.insets_examples.compose.components.TransparentSystemBars
+import com.vad99lord.insets_examples.compose.samples.BaseInsetsSampleActivity
 import com.vad99lord.insets_examples.ui.theme.InsetsExamplesTheme
 
-class ListSampleActivity : BaseInsetSampleActivity() {
+class ListSampleActivity : BaseInsetsSampleActivity() {
 
     @Composable
     override fun Sample() {
-        val systemUiController = rememberSystemUiController()
-        val useDarkIcons = MaterialTheme.colors.isLight
-        SideEffect {
-            systemUiController.setSystemBarsColor(
-                Color.Transparent,
-                darkIcons = useDarkIcons
-            )
-        }
         InsetsExamplesTheme {
             ListSample()
         }

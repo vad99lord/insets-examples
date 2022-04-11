@@ -1,11 +1,6 @@
-package com.vad99lord.insets_examples.compose.ui_visibility
+package com.vad99lord.insets_examples.compose.utils
 
-import android.app.Activity
-import android.content.Context
-import android.content.ContextWrapper
-import android.util.Log
 import android.view.View
-import android.view.Window
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.platform.LocalView
@@ -38,8 +33,6 @@ internal class AndroidSystemUiVisibilityController(
         systemBarsBehavior = WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
     }
 
-    private val window = view.context.findWindow()
-
     private val isVisibleStateFlow = MutableStateFlow(isSystemBarsVisible)
 
     private fun systemUiBars() =
@@ -47,8 +40,6 @@ internal class AndroidSystemUiVisibilityController(
 
     override var isSystemBarsVisible: Boolean
         get() {
-            Log.d("qweqwe", ViewCompat.getRootWindowInsets(view)
-                ?.isVisible(systemUiBars()).toString())
             return ViewCompat.getRootWindowInsets(view)
                 ?.isVisible(systemUiBars()) == true
         }
@@ -62,13 +53,9 @@ internal class AndroidSystemUiVisibilityController(
         }
     override val isVisible: StateFlow<Boolean>
         get() = isVisibleStateFlow.asStateFlow()
-
-    private fun Context.findWindow(): Window? {
-        var context = this
-        while (context is ContextWrapper) {
-            if (context is Activity) return context.window
-            context = context.baseContext
-        }
-        return null
-    }
 }
+
+val SystemUiVisibilityController.toggleUi: () -> Unit
+    get() = {
+        isSystemBarsVisible = !isSystemBarsVisible
+    }

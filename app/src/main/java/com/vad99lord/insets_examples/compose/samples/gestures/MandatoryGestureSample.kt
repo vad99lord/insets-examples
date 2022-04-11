@@ -26,18 +26,14 @@ import com.google.accompanist.insets.ui.Scaffold
 import com.google.accompanist.insets.ui.TopAppBar
 import com.vad99lord.insets_examples.R
 import com.vad99lord.insets_examples.compose.components.SampleMediaPlayer
+import com.vad99lord.insets_examples.compose.components.SampleTopBar
 
 @Composable
 fun MandatoryGestureSample() {
     Scaffold(
         topBar = {
-            TopAppBar(
-                title = { Text(stringResource(R.string.insets_sample_gesture_mandatory)) },
-                backgroundColor = MaterialTheme.colors.surface,
-                contentPadding = WindowInsets.statusBars
-                    .only(WindowInsetsSides.Horizontal + WindowInsetsSides.Top)
-                    .asPaddingValues(),
-                modifier = Modifier.fillMaxWidth()
+            SampleTopBar(
+                titleRes = R.string.insets_sample_gesture_mandatory
             )
         }
     ) { contentPadding ->

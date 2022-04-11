@@ -1,34 +1,18 @@
 package com.vad99lord.insets_examples.compose.samples.keyboard
 
-import android.view.WindowManager
-import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.SideEffect
-import androidx.compose.ui.graphics.Color
-import com.google.accompanist.systemuicontroller.rememberSystemUiController
-import com.vad99lord.insets_examples.compose.samples.BaseInsetSampleActivity
+import com.vad99lord.insets_examples.compose.samples.BaseInsetsSampleActivity
+import com.vad99lord.insets_examples.compose.utils.setResizeSoftInputMode
 import com.vad99lord.insets_examples.ui.theme.InsetsExamplesTheme
 
-class KeyboardScrollImeSampleActivity : BaseInsetSampleActivity() {
-
-
+class KeyboardScrollImeSampleActivity : BaseInsetsSampleActivity() {
 
     override fun setupOnCreate() {
-        @Suppress("DEPRECATION")
-        //or android:windowSoftInputMode="adjustResize" in manifest
-        window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE)
+        window.setResizeSoftInputMode()
     }
 
     @Composable
     override fun Sample() {
-        val systemUiController = rememberSystemUiController()
-        val useDarkIcons = MaterialTheme.colors.isLight
-        SideEffect {
-            systemUiController.setSystemBarsColor(
-                Color.Transparent,
-                darkIcons = useDarkIcons
-            )
-        }
         InsetsExamplesTheme {
             KeyboardScrollImeSample()
         }

@@ -20,8 +20,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.vad99lord.insets_examples.compose.util.fractionToElapsedTime
-import com.vad99lord.insets_examples.compose.util.toFormattedTime
+import com.vad99lord.insets_examples.compose.utils.fractionToElapsedTime
+import com.vad99lord.insets_examples.compose.utils.toFormattedTime
 
 @Composable
 fun SampleMediaPlayer(

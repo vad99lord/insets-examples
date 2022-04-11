@@ -1,4 +1,4 @@
-package com.vad99lord.insets_examples.compose.util
+package com.vad99lord.insets_examples.compose.utils
 
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.exclude

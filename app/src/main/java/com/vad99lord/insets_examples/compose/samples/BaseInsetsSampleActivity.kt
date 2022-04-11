@@ -6,8 +6,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.runtime.Composable
 import androidx.core.view.WindowCompat
 import com.vad99lord.insets_examples.R
+import com.vad99lord.insets_examples.compose.components.TransparentSystemBars
 
-abstract class BaseInsetSampleActivity : AppCompatActivity() {
+abstract class BaseInsetsSampleActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(R.style.Theme_Insetsexamples_NoActionBar)
@@ -15,6 +16,7 @@ abstract class BaseInsetSampleActivity : AppCompatActivity() {
         WindowCompat.setDecorFitsSystemWindows(window, false)
         setupOnCreate()
         setContent {
+            TransparentSystemBars()
             Sample()
         }
     }
