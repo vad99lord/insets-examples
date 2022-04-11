@@ -45,6 +45,7 @@ fun GestureExclusionSample() {
         topBar = {
             TopAppBar(
                 title = { Text(stringResource(R.string.insets_sample_gesture_exclusion)) },
+                backgroundColor = MaterialTheme.colors.surface,
                 contentPadding = WindowInsets.statusBars
                     .only(WindowInsetsSides.Horizontal + WindowInsetsSides.Top)
                     .asPaddingValues()

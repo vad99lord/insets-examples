@@ -10,9 +10,11 @@ import com.google.android.material.divider.MaterialDividerItemDecoration
 import com.vad99lord.insets_examples.adapter.InsetsSamplesAdapter
 import com.vad99lord.insets_examples.compose.samples.basic_list.ListSampleActivity
 import com.vad99lord.insets_examples.compose.samples.fullscreen.FullscreenCutoutSampleActivity
+import com.vad99lord.insets_examples.compose.samples.fullscreen.FullscreenStableSampleActivity
 import com.vad99lord.insets_examples.compose.samples.gestures.GestureExclusionSampleActivity
 import com.vad99lord.insets_examples.compose.samples.gestures.MandatoryGestureSampleActivity
 import com.vad99lord.insets_examples.compose.samples.keyboard.KeyboardBasicImeSampleActivity
+import com.vad99lord.insets_examples.compose.samples.keyboard.KeyboardScrollImeSampleActivity
 import com.vad99lord.insets_examples.data.InsetsSample
 import com.vad99lord.insets_examples.data.insetsSamples
 import com.vad99lord.insets_examples.databinding.ActivityMainBinding
@@ -47,11 +49,11 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
             when (sample) {
                 InsetsSample.BasicList -> ListSampleActivity::class
                 InsetsSample.Fullscreen.Cutout -> FullscreenCutoutSampleActivity::class
-                InsetsSample.Fullscreen.Stable -> TODO()
+                InsetsSample.Fullscreen.Stable -> FullscreenStableSampleActivity::class
                 InsetsSample.Gesture.Exclusion -> GestureExclusionSampleActivity::class
                 InsetsSample.Gesture.Mandatory -> MandatoryGestureSampleActivity::class
                 InsetsSample.Keyboard.BasicIme -> KeyboardBasicImeSampleActivity::class
-                InsetsSample.Keyboard.ScrollIme -> TODO()
+                InsetsSample.Keyboard.ScrollIme -> KeyboardScrollImeSampleActivity::class
             }
         val intent = Intent(this, sampleActivity.java)
         startActivity(intent)

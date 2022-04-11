@@ -3,6 +3,7 @@ package com.vad99lord.insets_examples.compose.ui_visibility
 import android.app.Activity
 import android.content.Context
 import android.content.ContextWrapper
+import android.util.Log
 import android.view.View
 import android.view.Window
 import androidx.compose.runtime.Composable
@@ -46,6 +47,8 @@ internal class AndroidSystemUiVisibilityController(
 
     override var isSystemBarsVisible: Boolean
         get() {
+            Log.d("qweqwe", ViewCompat.getRootWindowInsets(view)
+                ?.isVisible(systemUiBars()).toString())
             return ViewCompat.getRootWindowInsets(view)
                 ?.isVisible(systemUiBars()) == true
         }

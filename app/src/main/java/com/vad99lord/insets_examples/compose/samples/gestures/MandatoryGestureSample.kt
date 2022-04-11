@@ -8,9 +8,11 @@ import androidx.compose.foundation.layout.asPaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.mandatorySystemGestures
+import androidx.compose.foundation.layout.navigationBars
 import androidx.compose.foundation.layout.only
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.statusBars
+import androidx.compose.foundation.layout.union
 import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
@@ -31,7 +33,7 @@ fun MandatoryGestureSample() {
         topBar = {
             TopAppBar(
                 title = { Text(stringResource(R.string.insets_sample_gesture_mandatory)) },
-                backgroundColor = MaterialTheme.colors.surface.copy(alpha = 0.95f),
+                backgroundColor = MaterialTheme.colors.surface,
                 contentPadding = WindowInsets.statusBars
                     .only(WindowInsetsSides.Horizontal + WindowInsetsSides.Top)
                     .asPaddingValues(),
@@ -48,7 +50,11 @@ fun MandatoryGestureSample() {
             Surface(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .windowInsetsPadding(WindowInsets.mandatorySystemGestures.only(WindowInsetsSides.Bottom)),
+                    .windowInsetsPadding(
+                        WindowInsets.mandatorySystemGestures.only(WindowInsetsSides.Bottom).union(
+                            WindowInsets.navigationBars.only(WindowInsetsSides.Horizontal)
+                        )
+                    ),
                 color = Color.LightGray.copy(alpha = 0.3f)
             ) {
                 SampleMediaPlayer(

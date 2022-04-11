@@ -25,12 +25,10 @@
         <activity android:name=".compose.samples.basic_list.ListSampleActivity"/>
         <activity android:name=".compose.samples.gestures.GestureExclusionSampleActivity"/>
         <activity android:name=".compose.samples.gestures.MandatoryGestureSampleActivity"/>
-        <activity
-            android:name=".compose.samples.keyboard.KeyboardBasicImeSampleActivity"
-            android:windowSoftInputMode="adjustResize"
-            />
-        <!--android:windowSoftInputMode="adjustResize"-->
+        <activity android:name=".compose.samples.keyboard.KeyboardBasicImeSampleActivity"/>
+        <activity android:name=".compose.samples.keyboard.KeyboardScrollImeSampleActivity"/>
         <activity android:name=".compose.samples.fullscreen.FullscreenCutoutSampleActivity"/>
+        <activity android:name=".compose.samples.fullscreen.FullscreenStableSampleActivity"/>
     </application>
 
 </manifest>
