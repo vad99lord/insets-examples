@@ -1,6 +1,5 @@
-package com.vad99lord.insets_examples.compose
+package com.vad99lord.insets_examples.compose.samples.gestures
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.WindowInsets
@@ -9,7 +8,6 @@ import androidx.compose.foundation.layout.asPaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.mandatorySystemGestures
-import androidx.compose.foundation.layout.mandatorySystemGesturesPadding
 import androidx.compose.foundation.layout.only
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.statusBars
@@ -28,11 +26,11 @@ import com.vad99lord.insets_examples.R
 import com.vad99lord.insets_examples.compose.components.SampleMediaPlayer
 
 @Composable
-fun GestureSample() {
+fun MandatoryGestureSample() {
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text(stringResource(R.string.insets_sample_gesture)) },
+                title = { Text(stringResource(R.string.insets_sample_gesture_mandatory)) },
                 backgroundColor = MaterialTheme.colors.surface.copy(alpha = 0.95f),
                 contentPadding = WindowInsets.statusBars
                     .only(WindowInsetsSides.Horizontal + WindowInsetsSides.Top)
@@ -65,6 +63,6 @@ fun GestureSample() {
 
 @Preview
 @Composable
-fun GestureSamplePreview() {
-    GestureSample()
+fun MandatoryGestureSamplePreview() {
+    MandatoryGestureSample()
 }

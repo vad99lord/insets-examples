@@ -1,4 +1,4 @@
-package com.vad99lord.insets_examples.compose
+package com.vad99lord.insets_examples.compose.samples.basic_list
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Spacer
@@ -14,13 +14,10 @@ import androidx.compose.foundation.layout.windowInsetsBottomHeight
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.ExperimentalMaterialApi
-import androidx.compose.material.FloatingActionButton
 import androidx.compose.material.Icon
 import androidx.compose.material.ListItem
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Face
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
@@ -63,7 +60,7 @@ fun ListSample() {
             ) {
                 items(items = listItems) { listItem ->
                     ListItem(
-                        icon = { Icon(listItem.icon,null) },
+                        icon = { Icon(listItem.icon, null) },
                         text = { Text(listItem.message) },
                         modifier = Modifier.fillMaxWidth()
                     )

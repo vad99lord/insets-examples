@@ -1,4 +1,4 @@
-package com.vad99lord.insets_examples.compose
+package com.vad99lord.insets_examples.compose.samples.gestures
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column

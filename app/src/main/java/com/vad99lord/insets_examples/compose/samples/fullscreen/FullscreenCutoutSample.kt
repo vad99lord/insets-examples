@@ -1,4 +1,4 @@
-package com.vad99lord.insets_examples.compose
+package com.vad99lord.insets_examples.compose.samples.fullscreen
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
@@ -19,7 +19,7 @@ import com.google.accompanist.insets.ui.Scaffold
 import com.vad99lord.insets_examples.R
 
 @Composable
-fun FullscreenSample(
+fun FullscreenCutoutSample(
     toggleUi: () -> Unit,
     //isSystemUiVisible: StateFlow<Boolean>
 ) {

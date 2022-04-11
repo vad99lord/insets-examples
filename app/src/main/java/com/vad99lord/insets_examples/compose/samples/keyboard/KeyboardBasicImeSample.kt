@@ -1,4 +1,4 @@
-package com.vad99lord.insets_examples.compose
+package com.vad99lord.insets_examples.compose.samples.keyboard
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.WindowInsets
@@ -35,11 +35,11 @@ import com.vad99lord.insets_examples.compose.util.generateRandomListItem
 
 @OptIn(ExperimentalAnimatedInsets::class, ExperimentalMaterialApi::class)
 @Composable
-fun KeyboardSample() {
+fun KeyboardBasicImeSample() {
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text(stringResource(R.string.insets_sample_keyboard)) },
+                title = { Text(stringResource(R.string.insets_sample_keyboard_basic)) },
                 backgroundColor = MaterialTheme.colors.surface,
                 contentPadding = WindowInsets.statusBars
                     .only(WindowInsetsSides.Horizontal + WindowInsetsSides.Top)

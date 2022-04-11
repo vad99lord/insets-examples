@@ -11,6 +11,7 @@ import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.platform.ViewCompositionStrategy
 import androidx.fragment.app.Fragment
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
+import com.vad99lord.insets_examples.compose.samples.gestures.GestureExclusionSample
 import com.vad99lord.insets_examples.compose.ui_visibility.rememberSystemUiVisibilityController
 import com.vad99lord.insets_examples.ui.theme.InsetsExamplesTheme
 
