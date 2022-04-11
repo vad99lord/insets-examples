@@ -3,4 +3,5 @@
     <string name="compose_samples">Compose samples</string>
     <string name="insets_sample_list">Insets list sample</string>
     <string name="insets_sample_keyboard">Insets keyboard sample</string>
+    <string name="insets_sample_fullscreen">Insets fullscreen sample</string>
 </resources>

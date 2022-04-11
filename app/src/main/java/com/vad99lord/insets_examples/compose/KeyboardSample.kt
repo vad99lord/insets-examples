@@ -24,19 +24,16 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
 import com.google.accompanist.insets.ExperimentalAnimatedInsets
-import com.google.accompanist.insets.navigationBarsWithImePadding
-import com.google.accompanist.insets.rememberImeNestedScrollConnection
 import com.google.accompanist.insets.ui.Scaffold
 import com.google.accompanist.insets.ui.TopAppBar
 import com.vad99lord.insets_examples.R
 import com.vad99lord.insets_examples.compose.util.generateRandomListItem
 
-@OptIn(ExperimentalAnimatedInsets::class,ExperimentalMaterialApi::class)
+@OptIn(ExperimentalAnimatedInsets::class, ExperimentalMaterialApi::class)
 @Composable
 fun KeyboardSample() {
     Scaffold(
@@ -60,7 +57,8 @@ fun KeyboardSample() {
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(horizontal = 16.dp, vertical = 8.dp)
-                        .navigationBarsPadding().imePadding()
+                        .navigationBarsPadding()
+                        .imePadding()
                 )
             }
         },
@@ -72,11 +70,11 @@ fun KeyboardSample() {
                 reverseLayout = true,
                 modifier = Modifier
                     .weight(1f)
-                    //.nestedScroll(connection = rememberImeNestedScrollConnection())
+                //.nestedScroll(connection = rememberImeNestedScrollConnection())
             ) {
                 items(listItems) { listItem ->
                     ListItem(
-                        icon = { Icon(listItem.icon,null) },
+                        icon = { Icon(listItem.icon, null) },
                         text = { Text(listItem.message) },
                         modifier = Modifier.fillMaxWidth()
                     )

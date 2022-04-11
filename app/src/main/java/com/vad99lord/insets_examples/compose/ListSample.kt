@@ -8,7 +8,6 @@ import androidx.compose.foundation.layout.asPaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.navigationBars
-import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.only
 import androidx.compose.foundation.layout.statusBars
 import androidx.compose.foundation.layout.windowInsetsBottomHeight
@@ -37,14 +36,14 @@ fun ListSample() {
         topBar = {
             // TopAppBar insets-ui provides passing
             // content padding matching insets.
-            /*TopAppBar(
+            TopAppBar(
                 title = { Text(stringResource(R.string.insets_sample_list)) },
                 backgroundColor = MaterialTheme.colors.surface.copy(alpha = 0.95f),
                 contentPadding = WindowInsets.statusBars
                     .only(WindowInsetsSides.Horizontal + WindowInsetsSides.Top)
                     .asPaddingValues(),
                 modifier = Modifier.fillMaxWidth()
-            )*/
+            )
         },
         bottomBar = {
             // We add a spacer as a bottom bar, which is the same height as
@@ -54,17 +53,6 @@ fun ListSample() {
                     .windowInsetsBottomHeight(WindowInsets.navigationBars)
                     .fillMaxWidth()
             )
-        },
-        floatingActionButton = {
-            FloatingActionButton(
-                onClick = { /* TODO */ },
-                modifier = Modifier.navigationBarsPadding()
-            ) {
-                Icon(
-                    imageVector = Icons.Default.Face,
-                    contentDescription = "Face icon"
-                )
-            }
         }
     ) { contentPadding ->
         Box {
@@ -85,4 +73,4 @@ fun ListSample() {
     }
 }
 
-private val listItems = List(30) { generateRandomListItem() }
+private val listItems = List(50) { generateRandomListItem() }
