@@ -6,6 +6,8 @@ import androidx.compose.runtime.SideEffect
 import androidx.compose.ui.graphics.Color
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
+// Update the system bars to be translucent
+// Adjusts icons color to theme
 @Composable
 fun TransparentSystemBars() {
     val systemUiController = rememberSystemUiController()

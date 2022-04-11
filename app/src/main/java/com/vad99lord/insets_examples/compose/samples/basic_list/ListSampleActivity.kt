@@ -1,7 +1,6 @@
 package com.vad99lord.insets_examples.compose.samples.basic_list
 
 import androidx.compose.runtime.Composable
-import com.vad99lord.insets_examples.compose.components.TransparentSystemBars
 import com.vad99lord.insets_examples.compose.samples.BaseInsetsSampleActivity
 import com.vad99lord.insets_examples.ui.theme.InsetsExamplesTheme
 

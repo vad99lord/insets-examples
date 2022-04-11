@@ -16,6 +16,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import com.google.accompanist.insets.ui.TopAppBar
 
+/*
+Wrapper of TopAppBar insets-ui that provides passing
+content padding matching insets.
+*/
 @Composable
 fun SampleTopBar(
     @StringRes titleRes: Int,

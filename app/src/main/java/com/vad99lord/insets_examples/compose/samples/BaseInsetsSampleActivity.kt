@@ -13,6 +13,7 @@ abstract class BaseInsetsSampleActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(R.style.Theme_Insetsexamples_NoActionBar)
         super.onCreate(savedInstanceState)
+        // Turn off the decor fitting system windows, because we handle insets ourselves
         WindowCompat.setDecorFitsSystemWindows(window, false)
         setupOnCreate()
         setContent {

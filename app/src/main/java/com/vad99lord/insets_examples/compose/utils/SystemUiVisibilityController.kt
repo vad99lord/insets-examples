@@ -11,6 +11,12 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 
+/*
+Implementation based on Accompanist rememberSystemUiController:
+Updates system bars visibility in one
+Provides StateFlow of ui visibility
+Sets up system bars behavior to immersive sticky mode
+ */
 @Composable
 fun rememberSystemUiVisibilityController(): SystemUiVisibilityController {
     val view = LocalView.current

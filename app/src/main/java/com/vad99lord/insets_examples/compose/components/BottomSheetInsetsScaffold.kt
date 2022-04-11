@@ -26,10 +26,10 @@ import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.unit.Dp
 
 /*
-    BottomSheetScaffold variant that:
-    adds navigation bars insets to sheetPeekHeight,
-    pads sheetContent bottom with navigation bars insets,
-    pass sheetPeekHeight to sheetContent
+BottomSheetScaffold variant that:
+adds navigation bars insets to sheetPeekHeight,
+pads sheetContent bottom with navigation bars insets,
+pass sheetPeekHeight to sheetContent
  */
 @ExperimentalMaterialApi
 @Composable

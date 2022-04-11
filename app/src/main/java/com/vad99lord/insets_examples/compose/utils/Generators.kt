@@ -6,7 +6,6 @@ import com.vad99lord.insets_examples.compose.data.sampleIcons
 import com.vad99lord.insets_examples.compose.data.sampleTitles
 import kotlin.random.Random
 
-
 fun <T> generateList(count: Int, generator: () -> T): List<T> {
     return List(count) { generator() }
 }
@@ -22,7 +21,6 @@ fun generateRandomListItems(count: Int = 50): List<ListItem> {
         randomListItem()
     }
 }
-
 
 fun randomColor(): Color {
     return Color(

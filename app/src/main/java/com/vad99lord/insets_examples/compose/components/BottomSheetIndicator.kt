@@ -11,7 +11,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun BottomSheetIndicator(){
+fun BottomSheetIndicator() {
     Box(
         modifier = Modifier
             .background(
@@ -24,6 +24,6 @@ fun BottomSheetIndicator(){
 
 @Preview
 @Composable
-fun BottomSheetIndicatorPreview(){
+fun BottomSheetIndicatorPreview() {
     BottomSheetIndicator()
 }

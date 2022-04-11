@@ -21,7 +21,7 @@ fun ColoredBox(
     text: String? = null,
     size: Dp = 100.dp,
     color: Color = MaterialTheme.colors.primary,
-    border: Dp = (-1).dp
+    border: Dp = (-1).dp // default negative to skip drawing the border
 ) {
     Box(
         modifier = modifier
@@ -35,7 +35,7 @@ fun ColoredBox(
             ),
         contentAlignment = Alignment.Center
     ) {
-        text?.let{
+        text?.let {
             Text(
                 text = text,
                 modifier = Modifier

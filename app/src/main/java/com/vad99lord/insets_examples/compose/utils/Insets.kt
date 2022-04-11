@@ -12,6 +12,12 @@ import androidx.compose.ui.unit.Density
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
 
+/*
+Workaround class to cache status bars insets
+based on the biggest top side inset
+(assuming intermediate values during
+system ui visibility changes)
+ */
 class StableStatusBarsInsetsHolder {
 
     private var stableStatusBarsInsets: WindowInsets = Empty
@@ -25,6 +31,8 @@ class StableStatusBarsInsetsHolder {
             return remember {
                 derivedStateOf {
                     if (statusBars.exclude(stableStatusBarsInsets).getTop(density) > 0) {
+                        // get a copy of insets because statusBars is backed by an implementation
+                        // with auto updatable property causing cached insets changes
                         stableStatusBarsInsets = statusBars.deepCopy(density, layoutDirection)
                     }
                     stableStatusBarsInsets
