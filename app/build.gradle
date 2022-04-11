@@ -19,8 +19,18 @@ android {
         }
     }
 
+    signingConfigs {
+        release {
+            storeFile file("${rootDir}/test.jks")
+            storePassword "$KEY_ALIAS"
+            keyAlias "$KEY_PASSWORD"
+            keyPassword "$STORE_PASSWORD"
+        }
+    }
+
     buildTypes {
         release {
+            signingConfig signingConfigs.release
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
@@ -31,6 +41,7 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+        freeCompilerArgs += '-Xopt-in=kotlin.RequiresOptIn'
     }
     buildFeatures {
         compose true
@@ -66,6 +77,9 @@ dependencies {
     implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
 
     implementation('com.github.kirich1409:viewbindingpropertydelegate-noreflection:1.5.6')
+    implementation 'com.hannesdorfmann:adapterdelegates4-kotlin-dsl-viewbinding:4.3.2'
+
+    implementation("io.coil-kt:coil-compose:2.0.0-rc02")
 
     debugImplementation "androidx.compose.ui:ui-tooling:$compose_version"
 }
