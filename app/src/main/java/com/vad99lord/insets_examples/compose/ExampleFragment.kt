@@ -40,9 +40,11 @@ class ExampleFragment : Fragment() {
                     }
                 }
                 InsetsExamplesTheme {
-                    FullscreenSample(
+                    /*FullscreenSample(
                         toggleUi
-                    )
+                    )*/
+                    GestureExclusionSample()
+                    //GestureSample()
                 }
             }
         }

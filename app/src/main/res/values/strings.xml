@@ -4,4 +4,6 @@
     <string name="insets_sample_list">Insets list sample</string>
     <string name="insets_sample_keyboard">Insets keyboard sample</string>
     <string name="insets_sample_fullscreen">Insets fullscreen sample</string>
+    <string name="insets_sample_gesture">Insets gesture sample</string>
+    <string name="insets_sample_gesture_exclusion">Insets gesture exclusion sample</string>
 </resources>
