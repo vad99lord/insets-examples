@@ -11,6 +11,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.platform.ViewCompositionStrategy
 import androidx.fragment.app.Fragment
+import com.google.accompanist.insets.ProvideWindowInsets
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import com.vad99lord.insets_examples.ui.theme.InsetsExamplesTheme
 
@@ -31,7 +32,7 @@ class ExampleFragment : Fragment() {
                     systemUiController.setSystemBarsColor(Color.Transparent, darkIcons = useDarkIcons)
                 }
                 InsetsExamplesTheme {
-                    ListSample()
+                    KeyboardSample()
                 }
             }
         }
