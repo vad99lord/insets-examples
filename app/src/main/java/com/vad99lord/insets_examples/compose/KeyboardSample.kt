@@ -60,7 +60,7 @@ fun KeyboardSample() {
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(horizontal = 16.dp, vertical = 8.dp)
-                        .navigationBarsPadding()//.imePadding()
+                        .navigationBarsPadding().imePadding()
                 )
             }
         },
